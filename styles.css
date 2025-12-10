@@ -271,7 +271,7 @@ body {
   top: 48%;                     /* was 48% */
   left: 0;
   width: 100%;
-  transform: translateY(-50%);
+  transform: translateY(-45%);
   display: flex;
   justify-content: flex-start;
   gap: 16px;
@@ -602,7 +602,7 @@ body {
 /* swipe-to-finish control */
 .view-done-wrap {
   position: absolute;
-  bottom: 85px; /* lifted so text isn't cut by edge */
+  bottom: 50px; /* lifted so text isn't cut by edge */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
