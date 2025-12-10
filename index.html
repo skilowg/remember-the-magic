@@ -5,15 +5,20 @@
   <link rel="manifest" href="manifest.json">
 
   <!-- Basic theme color (used by Safari/Chrome for UI chrome) -->
-  <meta name="theme-color" content="#6155F5">
+  <meta name="theme-color" content="#CD98E3">
 
 	<!-- iOS: treat as standalone app when launched from Home Screen -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-status-bar-statustyle" content="black-translucent">
 	<meta name="apple-mobile-web-app-title" content="Magic Cards">
 
-<!-- iOS home-screen icon (PNG, recommended 180x180) -->
-<link rel="apple-touch-icon" href="assets/icons/app-icon-192.png">
+  <!-- iOS home-screen icon (PNG, recommended 180x180) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/app-icon-192.png">
+
+  <!-- Standard favicons / PWA icons for browsers -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/app-icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/app-icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/app-icon-512.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -121,7 +126,11 @@
 
 <!-- TAP TO SHUFFLE (HOME ONLY) -->
 <div class="shuffle-control" onclick="onSpin()">
-  <div class="shuffle-icon">↑</div>
+  <img
+    src="assets/icons/up arrow.svg"
+    alt="Up arrow"
+    class="tap-arrow bounce-arrow"
+  />
   <div class="shuffle-label">tap to shuffle</div>
 </div>
 

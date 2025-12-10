@@ -28,39 +28,72 @@ function scheduleHomeIdleWave() {
    Static asset paths for web version
 --------------------------------------------------- */
 
-// Images for the HOME card stack.
-// Point these at any 3 images you like under assets/zones/...
-const HOME_CARD_IMAGES = [
-  // --- Valley of Witches ---
-  { src: 'assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo043.jpg' },
-  { src: 'assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo011.jpg' },
-  { src: 'assets/zones/zone_valley_of_witches/zone_valley_of_witches-howl016.jpg' },
-  { src: 'assets/zones/zone_valley_of_witches/zone_valley_of_witches-howl035.jpg' },
-  { src: 'assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo037.jpg' },
+// --- Home card image pools ---
+// Full set (all images you want to use when online)
+const FULL_HOME_CARD_IMAGES = [
+  // Valley of Witches
+  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo011.jpg',
+  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo037.jpg',
+  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo043.jpg',
+  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-howl016.jpg',
+  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-howl035.jpg',
 
-  // --- Hill of Youth ---
-  { src: 'assets/zones/zone_hill_of_youth/zone_hill_of_youth-mimi044.jpg' },
-  { src: 'assets/zones/zone_hill_of_youth/zone_hill_of_youth-baron033.jpg' },
-  { src: 'assets/zones/zone_hill_of_youth/zone_hill_of_youth-kokurikozaka045.jpg' },
+  // Hill of Youth
+  '/assets/zones/zone_hill_of_youth/zone_hill_of_youth-mimi044.jpg',
+  '/assets/zones/zone_hill_of_youth/zone_hill_of_youth-baron033.jpg',
+  '/assets/zones/zone_hill_of_youth/zone_hill_of_youth-kokurikozaka045.jpg',
 
-  // --- Dondoko Forest ---
-  { src: 'assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro019.jpg' },
-  { src: 'assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro025.jpg' },
-  { src: 'assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro046.jpg' },
+  // Dondoko Forest
+  '/assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro019.jpg',
+  '/assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro025.jpg',
+  '/assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro046.jpg',
 
-  // --- Grand Warehouse ---
-  { src: 'assets/zones/zone_grand_warehouse/zone_grand_warehouse-laputa040.jpg' },
-  { src: 'assets/zones/zone_grand_warehouse/zone_grand_warehouse-laputa001.jpg' },
-  { src: 'assets/zones/zone_grand_warehouse/zone_grand_warehouse-chihiro047.jpg' },
-  { src: 'assets/zones/zone_grand_warehouse/zone_grand_warehouse-chihiro002.jpg' },
-  { src: 'assets/zones/zone_grand_warehouse/zone_grand_warehouse-karigurashi009.jpg' },
-  { src: 'assets/zones/zone_grand_warehouse/zone_grand_warehouse-nausicaa012.jpg' },
+  // Grand Warehouse
+  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-laputa001.jpg',
+  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-laputa040.jpg',
+  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-chihiro002.jpg',
+  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-chihiro047.jpg',
+  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-karigurashi009.jpg',
+  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-nausicaa012.jpg',
 
-  // --- Mononoke Village ---
-  { src: 'assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke015.jpg' },
-  { src: 'assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke026.jpg' },
-  { src: 'assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke002.jpg' }
+  // Mononoke Village
+  '/assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke002.jpg',
+  '/assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke015.jpg',
+  '/assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke026.jpg'
 ];
+
+// Offline-safe subset (matches sw.js CORE_ASSETS)
+const OFFLINE_HOME_CARD_IMAGES = [
+  // Valley of Witches
+  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo043.jpg',
+  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-howl016.jpg',
+
+  // Hill of Youth
+  '/assets/zones/zone_hill_of_youth/zone_hill_of_youth-mimi044.jpg',
+  '/assets/zones/zone_hill_of_youth/zone_hill_of_youth-kokurikozaka045.jpg',
+
+  // Dondoko Forest
+  '/assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro025.jpg',
+  '/assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro046.jpg',
+
+  // Grand Warehouse
+  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-laputa040.jpg',
+  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-chihiro047.jpg',
+
+  // Mononoke Village
+  '/assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke015.jpg',
+  '/assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke026.jpg'
+];
+
+// Decide which pool to use
+function getHomeImagePool() {
+  // If we explicitly know we’re offline, stick to the cached subset
+  if ('onLine' in navigator && !navigator.onLine) {
+    return OFFLINE_HOME_CARD_IMAGES;
+  }
+  // Otherwise, assume we can use the full set
+  return FULL_HOME_CARD_IMAGES;
+}
 
 // Icon paths used throughout the UI.
 // Make sure these filenames match what you actually have in assets/icons/.
@@ -287,16 +320,18 @@ function applyHomeCardImages() {
     document.getElementById('card-3')
   ];
 
-  if (!Array.isArray(HOME_CARD_IMAGES) || !HOME_CARD_IMAGES.length) return;
+  const pool = getHomeImagePool(); // uses FULL vs OFFLINE based on navigator.onLine
+
+  if (!Array.isArray(pool) || !pool.length) return;
 
   // Shallow copy & shuffle for a fresh order every time
-  const shuffled = HOME_CARD_IMAGES.slice().sort(() => Math.random() - 0.5);
+  const shuffled = pool.slice().sort(() => Math.random() - 0.5);
 
   cards.forEach((card, i) => {
     if (!card) return;
-    const img = shuffled[i % shuffled.length];
-    if (img && img.src) {
-      card.style.backgroundImage = "url('" + img.src + "')";
+    const url = shuffled[i % shuffled.length]; // each entry is a string path
+    if (url) {
+      card.style.backgroundImage = "url('" + url + "')";
     }
   });
 
@@ -449,16 +484,15 @@ function centerSelectionOnMiddle() {
   const middle = container.querySelector('.selection-card[data-index="1"]');
   if (!middle) return;
 
-  const containerRect = container.getBoundingClientRect();
-  const cardRect      = middle.getBoundingClientRect();
+  const cardWidth       = middle.offsetWidth;
+  const cardLeft        = middle.offsetLeft;
+  const containerWidth  = container.clientWidth;
 
-  // how far to scroll so card center aligns with container center
-  const containerCenter = containerRect.left + containerRect.width / 2;
-  const cardCenter      = cardRect.left + cardRect.width / 2;
-  const delta           = cardCenter - containerCenter;
+  // scroll so the card’s center lines up with the container’s center
+  const targetScroll =
+    cardLeft - (containerWidth / 2 - cardWidth / 2);
 
-  // adjust scrollLeft in the opposite direction
-  container.scrollLeft += delta;
+  container.scrollLeft = Math.max(0, targetScroll);
 }
 
 function populateSelectionCards() {
@@ -747,7 +781,7 @@ function exportHistory() {
   try {
     const ok = document.execCommand('copy');
     if (ok) {
-      showToast('Copied to Clipboard 📋');
+      showToast('Copied to Clipboard \uD83D\uDCCB');
     } else {
       // Fallback: show raw CSV so user can long-press + copy
       alert(csv);
@@ -835,7 +869,7 @@ function completeFinishPrompt() {
     // 3. Persist + refresh History UI + toast
     saveHistory();
     renderHistory();
-    showToast("prompt added to history ✨");
+    showToast("prompt added to history \u2728");
   }
 
   // 4. Go back to Home
@@ -882,3 +916,14 @@ document.addEventListener('DOMContentLoaded', () => {
   loadHistory();
   scheduleHomeIdleWave();
 });
+
+// Service worker registration for offline support
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./sw.js")
+      .catch((err) => {
+        console.log("SW registration failed:", err);
+      });
+  });
+}
