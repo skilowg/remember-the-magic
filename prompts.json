@@ -1,0 +1,602 @@
+[
+  {
+    "id": "Life_001",
+    "text": "Was there a small moment today that gently changed your mood?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_002",
+    "text": "Did anything quiet or ordinary today stay in your mind longer than you expected?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_003",
+    "text": "Was there a detail—light, sound, or texture—that you kept returning to in your thoughts?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_004",
+    "text": "Did you notice a brief pause in your day that felt softer than the rest of it?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_005",
+    "text": "Was there a moment when you suddenly became aware of your own breathing or posture?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_006",
+    "text": "Did any interaction today leave a warmer impression than you expected, even if it was small?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_007",
+    "text": "Was there something today that felt like a quiet turning point, even if you can’t fully name it yet?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_008",
+    "text": "Did you catch yourself smiling at something subtle or slightly ridiculous today?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_009",
+    "text": "Was there a contrast—between people, places, or moments—that stood out more than the rest?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_010",
+    "text": "Did any sound today—voices, music, traffic, nature—shape how you remember a moment?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_011",
+    "text": "Was there a time today when you felt unexpectedly seen, understood, or supported?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_012",
+    "text": "Did you notice any feeling from earlier in your life echoing quietly through today?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_013",
+    "text": "Was there a moment when time seemed to slow down, even for just a breath?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_014",
+    "text": "Did anything today gently challenge what you usually assume or believe?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_015",
+    "text": "Was there a tiny decision you made today that quietly mattered more than it looked on the surface?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_016",
+    "text": "Did you notice a place in your day where you exhaled more deeply than usual?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_017",
+    "text": "Was there something today that felt like the end of a small chapter, or the start of a new one?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_018",
+    "text": "Did you experience a brief moment of alignment—where your thoughts, feelings, or surroundings all matched?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_019",
+    "text": "Was there a small kindness today, from you or someone else, that deserves a second look?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_020",
+    "text": "Did anything today feel slightly out of place, in a way that made you more aware of your surroundings?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_021",
+    "text": "Was there a feeling that kept returning throughout the day, even if it was quiet or hard to name?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_022",
+    "text": "Did you catch a reflection—literal or figurative—that made you see something from a new angle?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_023",
+    "text": "Was there a moment of honest tiredness, relief, or satisfaction that felt especially real today?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_024",
+    "text": "Did you notice a small ritual in your day that quietly holds your life together?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_025",
+    "text": "Was there a time today when someone’s expression told you more than their words?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_026",
+    "text": "Did anything today remind you that you’ve changed over the last few years—in a way you’re glad about?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_027",
+    "text": "Was there a moment when you felt gently connected—to a person, a place, a memory, or yourself?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_028",
+    "text": "Did you notice any small mismatch between how the day looked on the outside and how it felt on the inside?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_029",
+    "text": "Was there a choice you made today that quietly reflected what matters to you right now?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_030",
+    "text": "Did anything today feel like it belonged to a different season of your life, even though it happened now?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_031",
+    "text": "Was there a moment where you felt more like yourself than usual, even briefly?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_032",
+    "text": "Did you notice a small habit or pattern today that you might want to keep—or gently change?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Life_033",
+    "text": "If today had a quiet closing scene, what moment would you choose to end on?",
+    "tagKey": "life",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_001",
+    "text": "Was there a particular place you passed through today that had a distinct atmosphere?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_002",
+    "text": "Did any street, path, or corridor feel different from what you imagined before you arrived?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_003",
+    "text": "Was there a sound from today’s journey—voices, traffic, nature, music—that you’d like to remember?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_004",
+    "text": "Did you notice a moment when the pace of the day noticeably sped up or slowed down?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_005",
+    "text": "Was there a view—large or small—that you quietly wished you could freeze for a few extra seconds?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_006",
+    "text": "Did you encounter any textures today—stone, fabric, paper, metal, skin—that stood out in your memory?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_007",
+    "text": "Was there a scent—food, air, rain, shops—that felt especially tied to this place?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_008",
+    "text": "Did you notice a color palette today that felt unique to this city, area, or moment?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_009",
+    "text": "Was there a small corner, alley, or side street that felt like it had its own secret story?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_010",
+    "text": "Did any sign, symbol, or piece of writing catch your eye—even if you couldn’t fully read or understand it?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_011",
+    "text": "Was there a moment in transit—on a train, bus, car, or on foot—that felt especially peaceful or vivid?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_012",
+    "text": "Did you experience a gentle mismatch between what you expected from a place and what you actually found?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_013",
+    "text": "Was there a meal, snack, or drink today whose taste or texture told you something about where you are?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_014",
+    "text": "Did you overhear a piece of conversation, in any language, that stuck with you for some reason?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_015",
+    "text": "Was there a moment when you suddenly felt aware that you were far from your usual routines?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_016",
+    "text": "Did you notice any reflections—windows, water, glass—that changed how you saw a scene?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_017",
+    "text": "Was there a time when the weather joined the story of your day in a noticeable way?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_018",
+    "text": "Did you find yourself matching the rhythm of the people around you—or moving at a completely different pace?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_019",
+    "text": "Was there a small wandering detour, planned or accidental, that added something to the day?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_020",
+    "text": "Did any object you carried—bag, camera, phone, ticket, notebook—feel especially important to how the day unfolded?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_021",
+    "text": "Was there a moment when you felt gently lost—in directions, in time, or in thought—in a way that wasn’t entirely bad?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_022",
+    "text": "Did you notice a doorway, staircase, or threshold that felt like it connected two different worlds of your day?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_023",
+    "text": "Was there a time today when you and someone else were clearly experiencing the same place in different ways?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_024",
+    "text": "Did any part of today feel like a scene you might sketch, photograph, or describe to someone later?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_025",
+    "text": "Was there something small you chose to skip or say no to today that subtly shaped the day’s path?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_026",
+    "text": "Did you notice any repeating motif—like a color, sound, word, or shape—that kept showing up today?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_027",
+    "text": "Was there a time when you felt like both an observer and a participant in the place you were in?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_028",
+    "text": "Did any seating—bench, train seat, café chair, curb—become a small stage for how you saw the day?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_029",
+    "text": "Was there a brief moment of stillness in the middle of movement that you’d like to hold onto?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_030",
+    "text": "Did you notice any local habit or pattern that you found charming, odd, or quietly impressive?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_031",
+    "text": "Was there a view today that felt completely different depending on whether you looked up or looked down?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_032",
+    "text": "Did any part of today feel like a transition scene—between places, moods, or parts of the trip?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_033",
+    "text": "Was there a moment when you suddenly realized, “I’m going to remember this trip from this angle”?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Trip_034",
+    "text": "Did you notice a small fragment from today—a sign, pattern, or sound—that could become the symbol of this day’s journey?",
+    "tagKey": "trip",
+    "zoneKey": null
+  },
+  {
+    "id": "Ghibli_001",
+    "text": "Did any tree, path, or patch of green today feel a little like Totoro might be napping just out of sight?",
+    "tagKey": "ghibli",
+    "zoneKey": "forest"
+  },
+  {
+    "id": "Ghibli_002",
+    "text": "Was there a moment in the rain, under an awning or roof, that quietly reminded you of Totoro with his leaf umbrella at the bus stop?",
+    "tagKey": "ghibli",
+    "zoneKey": "forest"
+  },
+  {
+    "id": "Ghibli_003",
+    "text": "Did you notice any small scattered objects—like pebbles, nuts, or fallen leaves—that could have been acorns left by tiny Totoros passing through?",
+    "tagKey": "ghibli",
+    "zoneKey": "forest"
+  },
+  {
+    "id": "Ghibli_004",
+    "text": "Was there a path, tunnel of trees, or narrow walkway that felt a bit like the entrance to the camphor tree where Totoro lives?",
+    "tagKey": "ghibli",
+    "zoneKey": "forest"
+  },
+  {
+    "id": "Ghibli_005",
+    "text": "Did any sound today—wind through leaves, insects, distant trains—remind you of the calm, nighttime world around Satsuki and Mei’s house?",
+    "tagKey": "ghibli",
+    "zoneKey": "forest"
+  },
+  {
+    "id": "Ghibli_006",
+    "text": "Was there a place where, if a Catbus suddenly appeared with glowing eyes, it would have felt strangely natural?",
+    "tagKey": "ghibli",
+    "zoneKey": "forest"
+  },
+  {
+    "id": "Ghibli_007",
+    "text": "Did you have a moment today that felt like stepping into Howl’s moving castle—crowded, lived-in, and full of odd little details?",
+    "tagKey": "ghibli",
+    "zoneKey": "witch"
+  },
+  {
+    "id": "Ghibli_008",
+    "text": "Was there a view from up high—stairs, balcony, hill, or train—that felt a little like flying with Howl over the rooftops?",
+    "tagKey": "ghibli",
+    "zoneKey": "witch"
+  },
+  {
+    "id": "Ghibli_009",
+    "text": "Did you see any cluttered, cozy corner today that could quietly belong to Sophie, busy with thread, hats, or cleaning supplies?",
+    "tagKey": "ghibli",
+    "zoneKey": "witch"
+  },
+  {
+    "id": "Ghibli_010",
+    "text": "Was there a warm, flickering light—candle, stove, oven, or lantern—that felt a bit like Calcifer grumbling and glowing in the hearth?",
+    "tagKey": "ghibli",
+    "zoneKey": "witch"
+  },
+  {
+    "id": "Ghibli_011",
+    "text": "Did you notice a breeze, open sky, or wide view that gave you the same feeling as Kiki starting off on her broom for the first time?",
+    "tagKey": "ghibli",
+    "zoneKey": "witch"
+  },
+  {
+    "id": "Ghibli_012",
+    "text": "Was there a small delivery, errand, or favor you did today that could fit into Kiki’s quiet list of jobs around town?",
+    "tagKey": "ghibli",
+    "zoneKey": "witch"
+  },
+  {
+    "id": "Ghibli_013",
+    "text": "Did any bookshop, staircase, or quiet corner today feel like it could hide Shizuku’s secret discoveries from Whisper of the Heart?",
+    "tagKey": "ghibli",
+    "zoneKey": "youth"
+  },
+  {
+    "id": "Ghibli_014",
+    "text": "Was there a moment when you noticed a small detail—like a name, object, or melody—that felt as meaningful as the title on Shizuku’s library card?",
+    "tagKey": "ghibli",
+    "zoneKey": "youth"
+  },
+  {
+    "id": "Ghibli_015",
+    "text": "Did you see anything today—a shop window, music instrument, statue, or trinket—that could quietly belong to the Baron’s world?",
+    "tagKey": "ghibli",
+    "zoneKey": "youth"
+  },
+  {
+    "id": "Ghibli_016",
+    "text": "Was there a moment that felt like working on a personal project in a small room, the way Shizuku writes while the city moves gently outside?",
+    "tagKey": "ghibli",
+    "zoneKey": "youth"
+  },
+  {
+    "id": "Ghibli_017",
+    "text": "Did you catch a view from a hill, balcony, or overlook that gave you the same quiet, searching feeling as the Hill of Youth?",
+    "tagKey": "ghibli",
+    "zoneKey": "youth"
+  },
+  {
+    "id": "Ghibli_018",
+    "text": "Was there a sound today—a violin, a train, distant traffic, or humming—that could fit into Seiji and Shizuku’s shared soundtrack?",
+    "tagKey": "ghibli",
+    "zoneKey": "youth"
+  },
+  {
+    "id": "Ghibli_019",
+    "text": "Did any landscape today—forest, field, city edge—feel like it held the same quiet power as the lands Ashitaka rides through?",
+    "tagKey": "ghibli",
+    "zoneKey": "mononoke"
+  },
+  {
+    "id": "Ghibli_020",
+    "text": "Was there a place where nature and human-made structures seemed to pull against each other, the way Iron Town and the forest do in Princess Mononoke?",
+    "tagKey": "ghibli",
+    "zoneKey": "mononoke"
+  },
+  {
+    "id": "Ghibli_021",
+    "text": "Did you notice any trees, roots, or moss-covered spaces that felt like the Forest Spirit might quietly pass through at dusk?",
+    "tagKey": "ghibli",
+    "zoneKey": "mononoke"
+  },
+  {
+    "id": "Ghibli_022",
+    "text": "Was there a moment when you sensed tension or conflict in your surroundings that reminded you of the balance Ashitaka tries to protect?",
+    "tagKey": "ghibli",
+    "zoneKey": "mononoke"
+  },
+  {
+    "id": "Ghibli_023",
+    "text": "Did you see any small white shapes—signs, lights, stones, or decorations—that could almost pass for kodama watching quietly from the trees?",
+    "tagKey": "ghibli",
+    "zoneKey": "mononoke"
+  },
+  {
+    "id": "Ghibli_024",
+    "text": "Was there a moment where you felt like a guest walking through someone else’s territory, the way Ashitaka walks into the wolves’ forest?",
+    "tagKey": "ghibli",
+    "zoneKey": "mononoke"
+  },
+  {
+    "id": "Ghibli_025",
+    "text": "Did any room, hall, or open space today feel like Ghibli’s Grand Warehouse—filled with more stories than you could take in at once?",
+    "tagKey": "ghibli",
+    "zoneKey": "warehouse"
+  },
+  {
+    "id": "Ghibli_026",
+    "text": "Was there a display, shelf, or collection of objects that reminded you of wandering past exhibits of Ghibli props and character statues?",
+    "tagKey": "ghibli",
+    "zoneKey": "warehouse"
+  },
+  {
+    "id": "Ghibli_027",
+    "text": "Did you spot any character images, plushies, or designs—Ghibli or otherwise—that gave you the same cozy feeling as seeing No-Face or the robot soldier on display?",
+    "tagKey": "ghibli",
+    "zoneKey": "warehouse"
+  },
+  {
+    "id": "Ghibli_028",
+    "text": "Was there a corner where different worlds seemed to overlap—like Spirited Away, Laputa, Ponyo, and Totoro all sharing one space?",
+    "tagKey": "ghibli",
+    "zoneKey": "warehouse"
+  },
+  {
+    "id": "Ghibli_029",
+    "text": "Did any corridor, staircase, or gallery feel like it was designed for you to wander slowly and discover surprises, the way the Grand Warehouse guides you along?",
+    "tagKey": "ghibli",
+    "zoneKey": "warehouse"
+  },
+  {
+    "id": "Ghibli_030",
+    "text": "Was there a moment when you felt like you were walking through a living Ghibli museum, surrounded by other people’s nostalgia and excitement?",
+    "tagKey": "ghibli",
+    "zoneKey": "warehouse"
+  },
+  {
+    "id": "Ghibli_031",
+    "text": "Did any ordinary action today—eating, walking, packing, waiting—briefly feel like it could be a quiet scene in a Ghibli film?",
+    "tagKey": "ghibli",
+    "zoneKey": null
+  },
+  {
+    "id": "Ghibli_032",
+    "text": "Was there a small moment of wonder—light on a surface, a passing train, a look between people—that felt softly animated in spirit?",
+    "tagKey": "ghibli",
+    "zoneKey": null
+  },
+  {
+    "id": "Ghibli_033",
+    "text": "Did you notice any combination of color, sound, and movement today that made you think, “This could be a background shot in a Ghibli scene”?",
+    "tagKey": "ghibli",
+    "zoneKey": null
+  }
+]

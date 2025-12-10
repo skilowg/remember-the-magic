@@ -1,0 +1,950 @@
+:root {
+  --bg-top: #F5BBE7;
+  --bg-bottom: #B8D7FA;
+  --purple: #6155F5;
+  --nav-bg: rgba(30,30,40,0.95);
+  --nav-text: #BEBED4;
+  --nav-text-active: #FFFFFF;
+  --text-main: #3A2E44;
+  --nav-height: 70px; /* NEW: shared nav height */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* TEMPORARY: hide code button */
+.key-button {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.screen {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* ===========================
+   HOME – KEY BUTTON + HEADER
+   =========================== */
+
+.key-button {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+  z-index: 3;
+}
+
+.key-button img {
+  width: 32px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.header-logo-wrap {
+  position: absolute;
+  /* pulled a bit closer to the top */
+  top: clamp(16px, 4vh, 36px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.header-logo {
+  width: 260px;
+  height: auto;
+}
+
+/* ===========================
+   HOME – CARD STACK
+   =========================== */
+
+.card-stack {
+  position: absolute;
+  left: 50%;
+  top: auto !important;
+  bottom: calc(var(--nav-height) + 190px) !important;
+  transform: translateX(-50%) !important;
+  width: 320px;
+  height: 360px;
+  z-index: 1;
+}
+
+.card {
+  position: absolute;
+  width: 198px;
+  height: 342px;
+  left: 50%;
+  transform-origin: center bottom;
+  border-radius: 28px;
+  background-size: cover;
+  background-position: center;
+  box-shadow:
+    0 18px 35px rgba(0,0,0,0.18),
+    0 6px 12px rgba(0,0,0,0.12);
+  transition: transform 0.35s ease;
+}
+
+/* base fan positions */
+.card:nth-child(1) {
+  transform: translate(-50%, 40px) translateX(-75px) rotate(-16deg);
+}
+.card:nth-child(2) {
+  transform: translate(-50%, 0px);
+}
+.card:nth-child(3) {
+  transform: translate(-50%, 40px) translateX(75px) rotate(16deg);
+}
+
+/* soft shuffle animation */
+@keyframes shuffleLeft {
+  0% { transform: translate(-50%,40px) translateX(-75px) rotate(-16deg); }
+  50% { transform: translate(-50%,10px) translateX(-110px) rotate(-8deg); }
+  100% { transform: translate(-50%,40px) translateX(-75px) rotate(-16deg); }
+}
+@keyframes shuffleCenter {
+  0% { transform: translate(-50%,0px); }
+  50% { transform: translate(-50%,-30px) scale(1.05); }
+  100% { transform: translate(-50%,0px); }
+}
+@keyframes shuffleRight {
+  0% { transform: translate(-50%,40px) translateX(75px) rotate(16deg); }
+  50% { transform: translate(-50%,10px) translateX(110px) rotate(8deg); }
+  100% { transform: translate(-50%,40px) translateX(75px) rotate(16deg); }
+}
+
+.card-stack.shuffling .card:nth-child(1) {
+  animation: shuffleLeft 0.5s ease-in-out;
+}
+.card-stack.shuffling .card:nth-child(2) {
+  animation: shuffleCenter 0.5s ease-in-out;
+}
+.card-stack.shuffling .card:nth-child(3) {
+  animation: shuffleRight 0.5s ease-in-out;
+}
+
+/* graceful fly-out after shuffle */
+@keyframes flyOutLeft {
+  0% {
+    transform: translate(-50%, 40px) translateX(-75px) rotate(-16deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -240px) translateX(-90px) rotate(-22deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flyOutCenter {
+  0% {
+    transform: translate(-50%, 0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -260px) scale(0.96);
+    opacity: 0;
+  }
+}
+
+@keyframes flyOutRight {
+  0% {
+    transform: translate(-50%, 40px) translateX(75px) rotate(16deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -240px) translateX(90px) rotate(22deg);
+    opacity: 0;
+  }
+}
+
+/* second phase: fly cards off screen */
+.card-stack.fly-out .card:nth-child(1) {
+  animation: flyOutLeft 0.5s ease-in forwards;
+}
+
+.card-stack.fly-out .card:nth-child(2) {
+  animation: flyOutCenter 0.5s ease-in forwards;
+}
+
+.card-stack.fly-out .card:nth-child(3) {
+  animation: flyOutRight 0.5s ease-in forwards;
+}
+
+/* tap-to-shuffle control */
+.shuffle-control {
+  position: absolute;
+  bottom: calc(var(--nav-height) + 24px); /* 24px above nav bar */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: var(--text-main);
+  transform: none !important;
+}
+
+.shuffle-icon {
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+.shuffle-label {
+  font-size: 17px;
+}
+
+/* ===========================
+   NAV BAR (fixed + sticky)
+   =========================== */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);  /* was 70px */
+  background: var(--nav-bg);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 100;
+}
+
+.nav-item {
+  text-align: center;
+  font-size: 11px;
+  color: var(--nav-text);
+  padding-bottom: 6px;
+}
+
+.nav-item-active {
+  color: var(--nav-text-active);
+  font-weight: 600;
+}
+
+.nav-icon {
+  width: 26px;
+  height: 26px;
+}
+
+/* ===========================
+   SELECTION SCREEN (3 CARDS)
+   =========================== */
+
+#screen-select.active {
+  display: block;
+}
+
+.selection-hint-top {
+  position: absolute;
+  top: 78px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.selection-cards {
+  position: absolute;
+  /* push the whole strip a bit lower to avoid clipping when we zoom */
+  top: 52%;                     /* was 48% */
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+
+  /* add a little padding above and a touch more below for comfort */
+  padding: 24px 32px 140px;     /* was 0 32px 130px */
+
+  overflow-x: auto;
+  overflow-y: visible;          /* let shadows show */
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.selection-cards::-webkit-scrollbar {
+  display: none;                /* iOS / WebKit */
+}
+
+/* Give the very last card a small trailing gap so
+   scrolling doesn't stop flush against the edge */
+.prompt-card:last-child {
+  margin-right: 20px;
+}
+
+.selection-cards.fade-in {
+  animation: selectionFadeIn 0.35s ease-out;
+}
+
+@keyframes selectionFadeIn {
+  from { opacity: 0; transform: translateY(-40%); }
+  to   { opacity: 1; transform: translateY(-50%); }
+}
+
+.prompt-card {
+  flex: 0 0 auto;
+  width: 260px;
+  height: 360px;
+  border-radius: 26px;
+  padding: 20px 18px 24px;
+  background: linear-gradient(160deg, #F7D1FF 0%, #B8D7FA 100%);
+  box-shadow:
+    0 18px 35px rgba(0,0,0,0.18),
+    0 6px 12px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #2E2038;
+}
+
+.prompt-tag {
+  align-self: flex-start;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 26px; /* was 18px – more space between tag + prompt */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* tag colors */
+.tag-life  { background: #F25BA3; }
+.tag-trip  { background: #2CB5B4; }
+.tag-ghibli{ background: #A66BFF; }
+
+/* card gradients by tag */
+.prompt-card.card-life {
+  background: linear-gradient(150deg, #FFD08A 0%, #FF7CA8 100%);
+}
+.prompt-card.card-trip {
+  background: linear-gradient(150deg, #95F2C0 0%, #79C9FF 100%);
+}
+.prompt-card.card-ghibli {
+  background: linear-gradient(150deg, #D6C3FF 0%, #8EDBFF 100%);
+}
+
+/* prompt text slightly larger (≈ +18%) */
+.prompt-text {
+  font-family: 'Amaranth', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 26px;
+  line-height: 1.25;
+}
+
+/* ---------------------------------------------------
+   CARD SELECTION – card lifting into VIEW
+--------------------------------------------------- */
+
+/* We could still use this in the future; for now it's harmless */
+.selection-cards.selection-animating {
+  pointer-events: none;
+}
+
+/* Selected card animation – gentle, slightly larger zoom */
+.selection-card.animate-to-view {
+  z-index: 20;  /* float above neighbors */
+  animation: selectionZoom 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+/* Slight lift toward the user (≈ +20% size), but no vertical shift to avoid clipping */
+@keyframes selectionZoom {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(0) scale(1.18);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1.2);
+    opacity: 1;  /* stays visible; screen transition + white flash handles the rest */
+  }
+}
+
+/* reshuffle */
+
+/* ===========================
+   ADDITIONAL ANIMATIONS
+   =========================== */
+
+/* Soft bounce for the home shuffle arrow */
+.shuffle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;              /* adjust if needed */
+  animation: shuffleArrowBounce 1.4s ease-in-out infinite;
+}
+
+@keyframes shuffleArrowBounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-6px);  /* how high it “jumps” */
+    opacity: 1;
+  }
+}
+
+/* ---------------------------------------------------
+   Home card stack entrance animation
+   - gentle fade + slide
+   - preserves final fanned positions
+--------------------------------------------------- */
+
+/* all cards start transparent */
+.card-stack.stack-enter .card {
+  opacity: 0;
+}
+
+/* LEFT card */
+.card-stack.stack-enter .card:nth-child(1) {
+  animation: homeCardEnterLeft 0.7s ease-out forwards;
+  animation-delay: 0.00s;
+}
+
+/* CENTER card */
+.card-stack.stack-enter .card:nth-child(2) {
+  animation: homeCardEnterCenter 0.7s ease-out forwards;
+  animation-delay: 0.06s;
+}
+
+/* RIGHT card */
+.card-stack.stack-enter .card:nth-child(3) {
+  animation: homeCardEnterRight 0.7s ease-out forwards;
+  animation-delay: 0.12s;
+}
+
+/* match the original fanned transforms at 100% */
+@keyframes homeCardEnterLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 80px) translateX(-75px) rotate(-16deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 40px) translateX(-75px) rotate(-16deg);
+  }
+}
+
+@keyframes homeCardEnterCenter {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0px);
+  }
+}
+
+@keyframes homeCardEnterRight {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 80px) translateX(75px) rotate(16deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 40px) translateX(75px) rotate(16deg);
+  }
+}
+
+/* --------------------------------------------------
+   CARD SELECTION — reshuffle button (matches view-done)
+-------------------------------------------------- */
+
+.selection-reshuffle {
+  position: fixed;
+  bottom: 85px; /* same vertical lift as view-done */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: auto;
+  z-index: 50; /* above cards */
+}
+
+.selection-reshuffle-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  background: var(--purple);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.25),
+    0 10px 10px rgba(0,0,0,0.22);
+  margin-bottom: 6px;
+}
+
+.selection-reshuffle-icon-wrap img {
+  width: 34px;   /* same as view-done */
+  height: 34px;
+  object-fit: contain;
+}
+
+.selection-reshuffle-label {
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+/* ===========================
+   VIEW SCREEN (FULL PROMPT)
+   =========================== */
+
+#screen-view.active {
+  display: block;
+}
+
+.view-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 32px clamp(96px, 12vh, 140px); /* bottom padding remains */
+  background: linear-gradient(160deg, #F7D1FF 0%, #B8D7FA 100%);
+  color: #2E2038;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* NEW: shift content upward while keeping responsiveness */
+  justify-content: flex-start; 
+  padding-top: clamp(40px, 10vh, 90px);
+}
+
+/* gradients by tag */
+.view-inner.card-life {
+  background: linear-gradient(150deg, #FFD08A 0%, #FF7CA8 100%);
+}
+.view-inner.card-trip {
+  background: linear-gradient(150deg, #95F2C0 0%, #79C9FF 100%);
+}
+.view-inner.card-ghibli {
+  background: linear-gradient(150deg, #D6C3FF 0%, #8EDBFF 100%);
+}
+
+/* View screen: card flies up + fades on finish */
+.view-inner.fly-out {
+  animation: viewFlyOut 0.45s ease-in forwards;
+}
+
+@keyframes viewFlyOut {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(-40vh) scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60vh) scale(1.06);
+    opacity: 0;
+  }
+}
+
+/* tag centered above prompt */
+.view-tag {
+  position: static;
+  flex: 0 0 auto;           /* NEW: do NOT let tag compress prompt */
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.view-tag.tag-life  { background: #F25BA3; }
+.view-tag.tag-trip  { background: #2CB5B4; }
+.view-tag.tag-ghibli{ background: #A66BFF; }
+
+/* main prompt text bigger (≈ +20%) */
+.view-text {
+  flex: 0; /* don't force it to fill – let flexbox center tag+text together */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Amaranth', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(36px, 4vw, 46px);
+  line-height: 1.25;
+  padding: 0 8px; /* tiny padding for small screens */
+}
+
+/* swipe-to-finish control */
+.view-done-wrap {
+  position: absolute;
+  bottom: 85px; /* lifted so text isn't cut by edge */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.view-done-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  background: var(--purple); /* makes Swipe_active visible even if strokes are light */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.25),
+    0 10px 10px rgba(0,0,0,0.22);
+  margin-bottom: 6px;
+}
+
+.view-done-icon img {
+  width: 34px;
+  height: 34px;
+}
+
+.view-done-label {
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+/* ===========================
+   HISTORY LAYOUT & STYLING
+   =========================== */
+
+/* Container */
+#screen-history {
+  position: relative;
+  padding-top: 32px;
+  padding-bottom: 110px; /* room for nav + clear pill */
+}
+
+/* Top export icon */
+.history-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.history-export-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.history-export-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: var(--purple);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.25),
+    0 10px 10px rgba(0,0,0,0.22);
+}
+
+.history-export-icon img {
+  width: 34px;
+  height: 34px;
+}
+
+.history-export-label {
+  font-size: 13px;
+  color: var(--text-main);
+}
+
+/* Clear All pill above nav */
+.history-clear-btn {
+  position: fixed;
+  left: 50%;
+  bottom: 94px; /* matches reshuffle / swipe controls spacing */
+  transform: translateX(-50%);
+  padding: 10px 28px;
+  border-radius: 999px;
+  border: none;
+  background: #6155F5;
+  color: #ffffff;
+  font-family: 'Amaranth', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.25),
+    0 10px 10px rgba(0,0,0,0.22);
+  display: none; /* toggled in JS */
+}
+
+/* Empty state */
+
+.history-empty {
+  display: none; /* toggled in JS */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
+  text-align: center;
+  gap: 12px;
+}
+
+.history-empty-message {
+  font-size: 16px;
+  color: var(--text-main);
+}
+
+.history-empty-btn {
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: none;
+  background: #6155F5;
+  color: #fff;
+  font-family: 'Amaranth', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 15px;
+}
+
+/* List container */
+.history-list {
+  padding: 24px 20px 40px;
+}
+
+/* Individual card */
+.history-card {
+  border-radius: 28px;
+  padding: 18px 18px 22px;
+  margin-bottom: 18px;
+  box-shadow:
+    0 18px 35px rgba(0,0,0,0.18),
+    0 8px 16px rgba(0,0,0,0.16);
+}
+
+/* History card gradients by tag (match selection/view) */
+.history-card.card-life {
+  background: linear-gradient(150deg, #FFD08A 0%, #FF7CA8 100%);
+}
+
+.history-card.card-trip {
+  background: linear-gradient(150deg, #95F2C0 0%, #79C9FF 100%);
+}
+
+.history-card.card-ghibli {
+  background: linear-gradient(150deg, #D6C3FF 0%, #8EDBFF 100%);
+}
+
+/* Reuse gradients: card-life / card-trip / card-ghibli already exist
+   and will apply here because we render class="history-card card-life", etc. */
+
+/* Header row: date + delete */
+.history-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.history-date {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Tag pill under date */
+.history-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+/* Prompt text */
+.history-text {
+  font-family: 'Amaranth', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  line-height: 1.35;
+  color: var(--text-main);
+}
+
+/* Delete icon button */
+.history-delete-btn {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.history-delete-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+/* reuse tag colors (same as selection/view) */
+.tag-life   { background: #F25BA3; }
+.tag-trip   { background: #2CB5B4; }
+.tag-ghibli { background: #A66BFF; }
+
+/* ---------------------------------------------------
+   Confirm Modal (Delete Single / Delete All)
+   Style: dark purple card, pill buttons, NO / YES style
+--------------------------------------------------- */
+
+.confirm-modal {
+  position: fixed;
+  inset: 0;
+  display: none;                 /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+}
+
+.confirm-modal.visible {
+  display: flex;
+}
+
+.confirm-dialog {
+  width: 82vw;
+  max-width: 320px;
+  padding: 20px 20px 18px;
+  border-radius: 26px;
+  background: #25203A;           /* dark purple background */
+  box-shadow:
+    0 18px 30px rgba(0, 0, 0, 0.45),
+    0 8px 16px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.confirm-message {
+  font-family: "Amaranth", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.confirm-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.confirm-btn {
+  flex: 1;
+  height: 44px;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+}
+
+/* “NO” button */
+.confirm-btn.cancel {
+  background: rgba(255, 255, 255, 0.10);
+  color: #FFFFFF;
+}
+
+/* “YES / DELETE” button */
+.confirm-btn.danger {
+  background: #6155F5;   /* your purple */
+  color: #FFB347;        /* warm orange text */
+}
+
+/* Small press feedback */
+.confirm-btn:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: none;
+  opacity: 0.9;
+}
+
+/* ===========================
+   TOAST
+   =========================== */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  top: 75px;
+  transform: translate(-50%, -25px);
+  background: rgba(0,0,0,0.78);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 200;
+  text-align: center;
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ===========================
+   WHITE SCREEN TRANSITION
+   =========================== */
+
+.white-transition {
+  position: fixed;
+  inset: 0;
+  background: #FFFFFF;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 500;  /* above screens, below confirm modal if needed */
+}
+
+.white-transition.active {
+  animation: whiteFlash 0.6s ease-in-out forwards;
+}
+
+@keyframes whiteFlash {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;   /* brief full white */
+  }
+  100% {
+    opacity: 0;   /* fade back out */
+  }
+}
