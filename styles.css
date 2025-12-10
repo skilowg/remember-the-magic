@@ -22,7 +22,10 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  overflow: hidden;
+  /* allow vertical scroll for history, keep horizontal locked */
+  overflow-x: hidden;
+  overflow-y: auto;
+
   background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
