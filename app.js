@@ -32,57 +32,57 @@ function scheduleHomeIdleWave() {
 // Full set (all images you want to use when online)
 const FULL_HOME_CARD_IMAGES = [
   // Valley of Witches
-  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo011.jpg',
-  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo037.jpg',
-  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo043.jpg',
-  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-howl016.jpg',
-  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-howl035.jpg',
+  'assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo011.jpg',
+  'assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo037.jpg',
+  'assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo043.jpg',
+  'assets/zones/zone_valley_of_witches/zone_valley_of_witches-howl016.jpg',
+  'assets/zones/zone_valley_of_witches/zone_valley_of_witches-howl035.jpg',
 
   // Hill of Youth
-  '/assets/zones/zone_hill_of_youth/zone_hill_of_youth-mimi044.jpg',
-  '/assets/zones/zone_hill_of_youth/zone_hill_of_youth-baron033.jpg',
-  '/assets/zones/zone_hill_of_youth/zone_hill_of_youth-kokurikozaka045.jpg',
+  'assets/zones/zone_hill_of_youth/zone_hill_of_youth-mimi044.jpg',
+  'assets/zones/zone_hill_of_youth/zone_hill_of_youth-baron033.jpg',
+  'assets/zones/zone_hill_of_youth/zone_hill_of_youth-kokurikozaka045.jpg',
 
   // Dondoko Forest
-  '/assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro019.jpg',
-  '/assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro025.jpg',
-  '/assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro046.jpg',
+  'assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro019.jpg',
+  'assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro025.jpg',
+  'assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro046.jpg',
 
   // Grand Warehouse
-  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-laputa001.jpg',
-  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-laputa040.jpg',
-  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-chihiro002.jpg',
-  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-chihiro047.jpg',
-  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-karigurashi009.jpg',
-  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-nausicaa012.jpg',
+  'assets/zones/zone_grand_warehouse/zone_grand_warehouse-laputa001.jpg',
+  'assets/zones/zone_grand_warehouse/zone_grand_warehouse-laputa040.jpg',
+  'assets/zones/zone_grand_warehouse/zone_grand_warehouse-chihiro002.jpg',
+  'assets/zones/zone_grand_warehouse/zone_grand_warehouse-chihiro047.jpg',
+  'assets/zones/zone_grand_warehouse/zone_grand_warehouse-karigurashi009.jpg',
+  'assets/zones/zone_grand_warehouse/zone_grand_warehouse-nausicaa012.jpg',
 
   // Mononoke Village
-  '/assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke002.jpg',
-  '/assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke015.jpg',
-  '/assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke026.jpg'
+  'assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke002.jpg',
+  'assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke015.jpg',
+  'assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke026.jpg'
 ];
 
 // Offline-safe subset (matches sw.js CORE_ASSETS)
 const OFFLINE_HOME_CARD_IMAGES = [
   // Valley of Witches
-  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo043.jpg',
-  '/assets/zones/zone_valley_of_witches/zone_valley_of_witches-howl016.jpg',
+  'assets/zones/zone_valley_of_witches/zone_valley_of_witches-majo043.jpg',
+  'assets/zones/zone_valley_of_witches/zone_valley_of_witches-howl016.jpg',
 
   // Hill of Youth
-  '/assets/zones/zone_hill_of_youth/zone_hill_of_youth-mimi044.jpg',
-  '/assets/zones/zone_hill_of_youth/zone_hill_of_youth-kokurikozaka045.jpg',
+  'assets/zones/zone_hill_of_youth/zone_hill_of_youth-mimi044.jpg',
+  'assets/zones/zone_hill_of_youth/zone_hill_of_youth-kokurikozaka045.jpg',
 
   // Dondoko Forest
-  '/assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro025.jpg',
-  '/assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro046.jpg',
+  'assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro025.jpg',
+  'assets/zones/zone_dondoko_forest/zone_dondoko_forest-totoro046.jpg',
 
   // Grand Warehouse
-  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-laputa040.jpg',
-  '/assets/zones/zone_grand_warehouse/zone_grand_warehouse-chihiro047.jpg',
+  'assets/zones/zone_grand_warehouse/zone_grand_warehouse-laputa040.jpg',
+  'assets/zones/zone_grand_warehouse/zone_grand_warehouse-chihiro047.jpg',
 
   // Mononoke Village
-  '/assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke015.jpg',
-  '/assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke026.jpg'
+  'assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke015.jpg',
+  'assets/zones/zone_mononoke_village/zone_mononoke_village-mononoke026.jpg'
 ];
 
 // Decide which pool to use
