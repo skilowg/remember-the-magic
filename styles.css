@@ -639,8 +639,11 @@ body {
 /* Container */
 #screen-history {
   position: relative;
+  height: 100%;                 /* fill the viewport */
   padding-top: 32px;
-  padding-bottom: 110px; /* room for nav + clear pill */
+  padding-bottom: 110px;        /* room for nav + clear pill */
+  overflow-y: auto;             /* <-- enable vertical scroll */
+  -webkit-overflow-scrolling: touch;  /* smooth iOS scrolling */
 }
 
 /* Top export icon */
